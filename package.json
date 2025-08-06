@@ -1,0 +1,68 @@
+{
+  "name": "thryfted",
+  "version": "1.0.0",
+  "description": "Vinted-inspired fashion marketplace built with React Native and Node.js microservices",
+  "private": true,
+  "workspaces": [
+    "mobile",
+    "backend/services/*",
+    "shared/*"
+  ],
+  "scripts": {
+    "install:all": "npm install && npm run install:mobile && npm run install:backend",
+    "install:mobile": "cd mobile && npm install",
+    "install:backend": "cd backend && npm install",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:mobile\"",
+    "dev:mobile": "cd mobile && npm run start",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:ios": "cd mobile && npm run ios",
+    "dev:android": "cd mobile && npm run android",
+    "build": "npm run build:backend && npm run build:mobile",
+    "build:mobile": "cd mobile && npm run build",
+    "build:backend": "cd backend && npm run build",
+    "test": "npm run test:backend && npm run test:mobile",
+    "test:backend": "cd backend && npm run test",
+    "test:mobile": "cd mobile && npm run test",
+    "lint": "npm run lint:backend && npm run lint:mobile",
+    "lint:backend": "cd backend && npm run lint",
+    "lint:mobile": "cd mobile && npm run lint",
+    "typecheck": "npm run typecheck:backend && npm run typecheck:mobile",
+    "typecheck:backend": "cd backend && npm run typecheck",
+    "typecheck:mobile": "cd mobile && npm run typecheck",
+    "clean": "npm run clean:backend && npm run clean:mobile && rm -rf node_modules",
+    "clean:backend": "cd backend && npm run clean",
+    "clean:mobile": "cd mobile && npm run clean",
+    "db:migrate": "cd backend && npm run db:migrate",
+    "db:seed": "cd backend && npm run db:seed",
+    "db:reset": "cd backend && npm run db:reset"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "prettier": "^3.2.5",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/thryfted.git"
+  },
+  "keywords": [
+    "marketplace",
+    "fashion",
+    "secondhand",
+    "react-native",
+    "node.js",
+    "microservices",
+    "vinted-clone"
+  ],
+  "author": "Thryfted Team",
+  "license": "MIT"
+}

@@ -1,0 +1,294 @@
+// Prisma schema file for User Service
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// User model with authentication and profile data
+model User {
+  id                    String   @id @default(uuid())
+  email                 String   @unique
+  username              String?  @unique
+  phoneNumber           String?  @unique
+  firstName             String?
+  lastName              String?
+  displayName           String?
+  bio                   String?  @db.VarChar(500)
+  profilePicture        String?
+  dateOfBirth           DateTime?
+  
+  // Authentication
+  password              String
+  isEmailVerified       Boolean  @default(false)
+  isPhoneVerified       Boolean  @default(false)
+  emailVerificationToken String?
+  phoneVerificationToken String?
+  passwordResetToken    String?
+  passwordResetExpiry   DateTime?
+  
+  // Account status
+  isActive              Boolean  @default(true)
+  isSuspended           Boolean  @default(false)
+  suspensionReason      String?
+  suspendedAt           DateTime?
+  lastLoginAt           DateTime?
+  
+  // Trust and reputation
+  trustScore            Float    @default(0.0)
+  totalRatings          Int      @default(0)
+  averageRating         Float    @default(0.0)
+  totalSales            Int      @default(0)
+  totalPurchases        Int      @default(0)
+  successfulTransactions Int     @default(0)
+  
+  // Social features
+  followersCount        Int      @default(0)
+  followingCount        Int      @default(0)
+  
+  // Timestamps
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+  
+  // Relations
+  addresses             Address[]
+  preferences           UserPreferences?
+  socialLogins          SocialLogin[]
+  sessions              UserSession[]
+  reviews               Review[]
+  
+  @@map("users")
+}
+
+// User addresses for shipping and billing
+model Address {
+  id          String  @id @default(uuid())
+  userId      String
+  user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  type        AddressType
+  street      String
+  city        String
+  state       String
+  postalCode  String
+  country     String  @default("US")
+  isDefault   Boolean @default(false)
+  
+  // Validation flags
+  isVerified  Boolean @default(false)
+  verifiedAt  DateTime?
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  @@map("addresses")
+}
+
+enum AddressType {
+  SHIPPING
+  BILLING
+  BOTH
+}
+
+// User preferences and settings
+model UserPreferences {
+  id                    String  @id @default(uuid())
+  userId                String  @unique
+  user                  User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  // Localization
+  language              String  @default("en")
+  currency              String  @default("USD")
+  timezone              String  @default("UTC")
+  
+  // Notifications
+  emailNotifications    Boolean @default(true)
+  pushNotifications     Boolean @default(true)
+  smsNotifications      Boolean @default(false)
+  marketingEmails       Boolean @default(true)
+  
+  // Notification preferences
+  notifyNewMessages     Boolean @default(true)
+  notifyOffers          Boolean @default(true)
+  notifyPriceDrops      Boolean @default(true)
+  notifyNewFollowers    Boolean @default(true)
+  notifyOrderUpdates    Boolean @default(true)
+  
+  // Privacy settings
+  showLastSeen          Boolean @default(true)
+  showLocation          Boolean @default(false)
+  allowDirectMessages   Boolean @default(true)
+  showFollowers         Boolean @default(true)
+  showFollowing         Boolean @default(true)
+  showPurchases         Boolean @default(false)
+  
+  // Size preferences (JSON stored as text)
+  sizePreferences       Json?
+  
+  // Favorite brands and categories
+  favoriteBrands        String[] @default([])
+  favoriteCategories    String[] @default([])
+  
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+  
+  @@map("user_preferences")
+}
+
+// Social login providers
+model SocialLogin {
+  id            String   @id @default(uuid())
+  userId        String
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  provider      SocialProvider
+  providerId    String
+  email         String?
+  name          String?
+  picture       String?
+  
+  accessToken   String?
+  refreshToken  String?
+  expiresAt     DateTime?
+  
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  
+  @@unique([provider, providerId])
+  @@unique([userId, provider])
+  @@map("social_logins")
+}
+
+enum SocialProvider {
+  GOOGLE
+  FACEBOOK
+  APPLE
+  TWITTER
+}
+
+// User sessions for tracking active logins
+model UserSession {
+  id            String   @id @default(uuid())
+  userId        String
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  token         String   @unique
+  deviceId      String?
+  deviceName    String?
+  deviceType    DeviceType?
+  ipAddress     String?
+  userAgent     String?
+  location      String?
+  
+  isActive      Boolean  @default(true)
+  expiresAt     DateTime
+  lastUsedAt    DateTime @default(now())
+  
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  
+  @@map("user_sessions")
+}
+
+enum DeviceType {
+  MOBILE
+  DESKTOP
+  TABLET
+  UNKNOWN
+}
+
+// Review system for user ratings
+model Review {
+  id            String   @id @default(uuid())
+  
+  // The user being reviewed
+  userId        String
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  // The user who wrote the review
+  reviewerId    String
+  
+  // Review data
+  orderId       String?  // Reference to order in payment service
+  rating        Float    // 1.0 to 5.0
+  title         String?
+  comment       String?  @db.VarChar(1000)
+  
+  // Review type
+  reviewType    ReviewType
+  
+  // Moderation
+  isVisible     Boolean  @default(true)
+  isVerified    Boolean  @default(false) // Verified purchase
+  moderatedAt   DateTime?
+  moderatedBy   String?
+  
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  
+  @@unique([reviewerId, orderId]) // One review per order per reviewer
+  @@map("reviews")
+}
+
+enum ReviewType {
+  BUYER_TO_SELLER
+  SELLER_TO_BUYER
+}
+
+// Email verification tokens
+model EmailVerification {
+  id        String   @id @default(uuid())
+  email     String
+  token     String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  
+  @@map("email_verifications")
+}
+
+// Phone verification tokens
+model PhoneVerification {
+  id          String   @id @default(uuid())
+  phoneNumber String
+  code        String
+  expiresAt   DateTime
+  attempts    Int      @default(0)
+  verified    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  
+  @@map("phone_verifications")
+}
+
+// Password reset tokens
+model PasswordReset {
+  id        String   @id @default(uuid())
+  email     String
+  token     String   @unique
+  expiresAt DateTime
+  used      Boolean  @default(false)
+  usedAt    DateTime?
+  createdAt DateTime @default(now())
+  
+  @@map("password_resets")
+}
+
+// Audit log for important user actions
+model UserAuditLog {
+  id          String   @id @default(uuid())
+  userId      String
+  action      String   // LOGIN, LOGOUT, PASSWORD_CHANGE, etc.
+  details     Json?    // Additional context
+  ipAddress   String?
+  userAgent   String?
+  success     Boolean  @default(true)
+  errorMessage String?
+  
+  createdAt   DateTime @default(now())
+  
+  @@index([userId, createdAt])
+  @@map("user_audit_logs")
+}
