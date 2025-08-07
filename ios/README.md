@@ -89,3 +89,4 @@ flutter pub run build_runner build
 ## 📄 License
 
 MIT License - See LICENSE file for details
+EOF < /dev/null

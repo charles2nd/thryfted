@@ -1,0 +1,417 @@
+{
+  "@@locale": "en",
+  "@@last_modified": "2025-08-07T15:00:00",
+  "@@context": "Thryfted - Sustainable Fashion Marketplace",
+
+  "appName": "Thryfted",
+  "@appName": {
+    "description": "The name of the application"
+  },
+  "appTagline": "Your sustainable fashion marketplace",
+  "@appTagline": {
+    "description": "App tagline/subtitle"
+  },
+  "welcome": "Welcome",
+  "loading": "Loading...",
+  "error": "Error",
+  "success": "Success",
+  "cancel": "Cancel",
+  "confirm": "Confirm",
+  "save": "Save",
+  "delete": "Delete",
+  "edit": "Edit",
+  "done": "Done",
+  "next": "Next",
+  "previous": "Previous",
+  "close": "Close",
+  "retry": "Retry",
+  "refresh": "Refresh",
+
+  "navHome": "Home",
+  "navSearch": "Search",
+  "navSell": "Sell",
+  "navMessages": "Messages",
+  "navProfile": "You",
+
+  "welcomeToThryfted": "Welcome to Thryfted",
+  "signIn": "Sign In",
+  "signUp": "Sign Up",
+  "signOut": "Sign Out",
+  "logout": "Logout",
+  "email": "Email",
+  "password": "Password",
+  "firstName": "First Name",
+  "lastName": "Last Name",
+  "phone": "Phone",
+  "forgotPassword": "Forgot Password?",
+  "createAccount": "Create Account",
+  "alreadyHaveAccount": "Already have an account?",
+  "dontHaveAccount": "Don't have an account?",
+  "rememberMe": "Remember me",
+  "termsAndConditions": "Terms and Conditions",
+  "privacyPolicy": "Privacy Policy",
+  "acceptTerms": "I accept the Terms and Conditions",
+  "signOutConfirmTitle": "Sign out",
+  "signOutConfirmMessage": "Are you sure you want to sign out?",
+
+  "you": "You",
+  "profile": "Profile",
+  "editProfile": "Edit Profile",
+  "userProfile": "User Profile",
+  "favorites": "Favorites",
+  "favoritesSubtitle": "Items you love",
+  "orderHistory": "Order history",
+  "orderHistorySubtitle": "Your purchases",
+  "myListings": "My listings",
+  "myListingsSubtitle": "Items you're selling",
+  "wallet": "Wallet",
+  "walletSubtitle": "Earnings and balance",
+  "settings": "Settings",
+  "settingsSubtitle": "Account preferences",
+  "helpAndSupport": "Help & Support",
+  "helpAndSupportSubtitle": "Get help",
+  "verifyEmail": "Verify email",
+  "emailVerified": "Email verified",
+  "phoneVerified": "Phone verified",
+  "sellerVerified": "Seller verified",
+  "noRating": "No rating",
+
+  "homeTitle": "Discover",
+  "homeSubtitle": "Find your next favorite piece",
+  "featuredItems": "Featured Items",
+  "newArrivals": "New Arrivals",
+  "trending": "Trending",
+  "categories": "Categories",
+  "seeAll": "See All",
+  "viewAll": "View all",
+
+  "welcomeBack": "Welcome back, {userName}! 👋",
+  "@welcomeBack": {
+    "description": "Welcome message with user name",
+    "placeholders": {
+      "userName": {
+        "type": "String",
+        "example": "John"
+      }
+    }
+  },
+  "discoverMessage": "Discover amazing secondhand fashion finds",
+  "marketplaceComingSoon": "🛍️ Marketplace coming soon!",
+  "marketplaceFeatures": "Here you'll discover:\n\n• Personalized item recommendations\n• Items from people you follow\n• Featured listings\n• Trending categories\n• Local finds near you",
+  "itemPlaceholder": "Item {number}",
+  "@itemPlaceholder": {
+    "description": "Placeholder text for items",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+
+  "search": "Search",
+  "searchHint": "Search for items, brands, users...",
+  "recentSearches": "Recent Searches",
+  "popularSearches": "Popular Searches",
+  "filters": "Filters",
+  "sortBy": "Sort by",
+  "category": "Category",
+  "brand": "Brand",
+  "size": "Size",
+  "color": "Color",
+  "condition": "Condition",
+  "priceRange": "Price Range",
+  "location": "Location",
+  "noResults": "No results found",
+  "noResultsMessage": "Try adjusting your filters or search terms",
+
+  "sell": "Sell",
+  "sellYourItems": "Sell Your Items",
+  "sellDescription": "Turn your closet into cash",
+  "addPhotos": "Add Photos",
+  "addPhotosDescription": "Add up to 8 photos",
+  "itemTitle": "Item Title",
+  "itemDescription": "Description",
+  "itemPrice": "Price",
+  "itemBrand": "Brand",
+  "itemSize": "Size",
+  "itemColor": "Color",
+  "itemCondition": "Condition",
+  "itemCategory": "Category",
+  "publishListing": "Publish Listing",
+  "draftSaved": "Draft saved",
+
+  "messages": "Messages",
+  "noMessages": "No messages yet",
+  "noMessagesDescription": "Start buying or selling to chat with other users",
+  "typeMessage": "Type a message...",
+  "online": "Online",
+  "offline": "Offline",
+  "lastSeen": "Last seen {time}",
+  "@lastSeen": {
+    "description": "Last seen timestamp",
+    "placeholders": {
+      "time": {
+        "type": "String",
+        "example": "2 hours ago"
+      }
+    }
+  },
+
+  "addToCart": "Add to Cart",
+  "buyNow": "Buy Now",
+  "makeOffer": "Make Offer",
+  "cart": "Cart",
+  "checkout": "Checkout",
+  "shipping": "Shipping",
+  "payment": "Payment",
+  "total": "Total",
+  "subtotal": "Subtotal",
+  "taxes": "Taxes",
+  "shippingCost": "Shipping Cost",
+  "free": "Free",
+
+  "items": "Items",
+  "followers": "Followers",
+  "following": "Following",
+  "reviews": "Reviews",
+  "sales": "Sales",
+  "purchases": "Purchases",
+  "rating": "Rating",
+
+  "errorGeneral": "An error occurred. Please try again.",
+  "errorNetwork": "Network error. Check your connection.",
+  "errorAuth": "Authentication error. Please sign in again.",
+  "errorNotFound": "Page not found",
+  "errorPermission": "Permission denied",
+  "goHome": "Go Home",
+
+  "fieldRequired": "This field is required",
+  "emailInvalid": "Please enter a valid email address",
+  "passwordTooShort": "Password must be at least 8 characters",
+  "phoneInvalid": "Please enter a valid phone number",
+
+  "now": "Now",
+  "justNow": "Just now",
+  "minuteAgo": "{count} minute ago",
+  "@minuteAgo": {
+    "description": "Time ago in minutes (singular)",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "minutesAgo": "{count} minutes ago",
+  "@minutesAgo": {
+    "description": "Time ago in minutes (plural)",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "hourAgo": "{count} hour ago",
+  "@hourAgo": {
+    "description": "Time ago in hours (singular)",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "hoursAgo": "{count} hours ago",
+  "@hoursAgo": {
+    "description": "Time ago in hours (plural)",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "dayAgo": "{count} day ago",
+  "@dayAgo": {
+    "description": "Time ago in days (singular)",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "daysAgo": "{count} days ago",
+  "@daysAgo": {
+    "description": "Time ago in days (plural)",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+
+  "searchForItems": "Search for clothes, brands, and more...",
+  "trendingSearches": "Trending searches",
+  "browseByCategoryTitle": "Browse by category",
+  "startSearching": "Start searching!",
+  "startSearchingSubtitle": "Use the search bar above to find amazing secondhand fashion items",
+  "women": "Women",
+  "men": "Men",
+  "kids": "Kids",
+  "shoes": "Shoes",
+  "accessories": "Accessories",
+  "home": "Home",
+  "listAnItem": "List an item",
+  "listAnItemSubtitle": "Take photos and create your listing in minutes",
+  "startSelling": "Start selling",
+  "turnWardrobeIntoCash": "Turn your wardrobe into cash",
+  "sellingTips": "Selling tips",
+  "takeGreatPhotos": "Take great photos",
+  "takeGreatPhotosSubtitle": "Good lighting and clear images sell faster",
+  "priceCompetitively": "Price competitively",
+  "priceCompetitivelySubtitle": "Research similar items to set the right price",
+  "writeDetailedDescriptions": "Write detailed descriptions",
+  "writeDetailedDescriptionsSubtitle": "Include size, condition, and brand information",
+  "respondQuickly": "Respond quickly",
+  "respondQuicklySubtitle": "Quick responses increase your chances of selling",
+  "noListingsYet": "No listings yet",
+  "createFirstListing": "Create your first listing to start selling",
+  "createListing": "Create Listing",
+  "createListingMessage": "The listing creation feature will be implemented soon. This will include photo upload, item details, and pricing.",
+  "ok": "OK",
+  "searchConversations": "Search conversations...",
+  "isItemAvailable": "Is this item still available?",
+  "thanksForDelivery": "Thanks for the quick delivery!",
+  "sendMorePhotos": "Could you send more photos?",
+  "noMoreMessages": "No more messages",
+  "startBuyingOrSelling": "Start buying or selling to begin conversations with other users",
+  "startShopping": "Start shopping",
+  "chatWith": "Chat with {userName}",
+  "@chatWith": {
+    "description": "Chat dialog title",
+    "placeholders": {
+      "userName": {
+        "type": "String",
+        "example": "John"
+      }
+    }
+  },
+  "messagingFeatureMessage": "The messaging feature will be implemented soon. This will include real-time chat, image sharing, and push notifications.",
+  "yourActivity": "Your activity",
+  "itemsSold": "Items sold",
+  "itemsBought": "Items bought",
+
+  "languageSettings": "Language Settings",
+  "language": "Language",
+  "selectLanguage": "Select Language",
+  "french": "Français",
+  "english": "English",
+
+  "verificationStatus": "Verification Status",
+  "profileComplete": "Profile Complete",
+  "connectedAccounts": "Connected Accounts",
+  "quickActions": "Quick Actions",
+  "shareProfile": "Share Profile",
+  "comingSoon": "Coming Soon",
+  "featureInDevelopment": "This feature is being developed and will be available in a future update.",
+  "memberSince": "Member since {date}",
+  "@memberSince": {
+    "description": "Member registration date",
+    "placeholders": {
+      "date": {
+        "type": "String",
+        "example": "January 2024"
+      }
+    }
+  },
+  "lastActive": "Last active {time}",
+  "@lastActive": {
+    "description": "Last activity timestamp",
+    "placeholders": {
+      "time": {
+        "type": "String",
+        "example": "2 hours ago"
+      }
+    }
+  },
+  "sellerRating": "seller rating",
+  "emailVerification": "Email Verification",
+  "phoneVerification": "Phone Verification",
+  "sellerVerification": "Seller Verification",
+  "profileCompletion": "Profile Completion",
+  "completeProfile": "Complete Your Profile",
+  "buildTrust": "Complete your profile to build trust with buyers and sellers",
+  "addFirstName": "Add first name",
+  "addLastName": "Add last name",
+  "addPhoneNumber": "Add phone number",
+  "addProfilePhoto": "Add profile photo",
+  "startBuyingSelling": "Start buying or selling to build your marketplace reputation!",
+  "marketplace": "Marketplace",
+  "support": "Support",
+  "notifications": "Notifications",
+  "manageAlerts": "Manage your alerts",
+  "privacySafety": "Privacy & Safety",
+  "accountSecurity": "Account security settings",
+  "sendFeedback": "Send Feedback",
+  "helpImprove": "Help us improve Thryfted",
+  "about": "About",
+  "appVersionInfo": "App version and info",
+  "newUser": "New",
+
+  "editProfileTitle": "Edit Profile",
+  "editProfileSubtitle": "Update your personal information",
+  "username": "Username",
+  "usernameHint": "Enter your username",
+  "phoneNumber": "Phone Number",
+  "phoneNumberHint": "Enter your phone number",
+  "updateProfile": "Update Profile",
+  "updatingProfile": "Updating...",
+  "profileUpdatedSuccess": "Profile updated successfully",
+  "profileUpdateError": "Failed to update profile",
+  
+  "shareProfileTitle": "Share Profile",
+  "shareProfileText": "Check out my profile on Thryfted! 👋\n\n{displayName}\n{stats}\n\nJoin me on Thryfted - your sustainable fashion marketplace!",
+  "@shareProfileText": {
+    "description": "Text shared when sharing profile",
+    "placeholders": {
+      "displayName": {
+        "type": "String",
+        "example": "John Doe"
+      },
+      "stats": {
+        "type": "String",
+        "example": "5 items sold • 3 items bought"
+      }
+    }
+  },
+  
+  "verifyEmailTitle": "Email Verification",
+  "verifyEmailMessage": "We'll send a verification link to your email address. Click the link to verify your account.",
+  "verifyEmailButton": "Send Verification Email",
+  "verifyEmailSuccess": "Verification email sent successfully",
+  "verifyEmailError": "Failed to send verification email",
+  
+  "verifyPhoneTitle": "Phone Verification",
+  "verifyPhoneMessage": "Enter your phone number to receive a verification code via SMS.",
+  "verifyPhoneButton": "Send Verification Code",
+  "verifyPhoneSuccess": "Verification code sent successfully",
+  "verifyPhoneError": "Failed to send verification code",
+  "enterVerificationCode": "Enter Verification Code",
+  "verificationCode": "Verification Code",
+  "verifyCode": "Verify Code",
+  
+  "verifySellerTitle": "Seller Verification",
+  "verifySellerMessage": "To become a verified seller, you need to:\n\n• Complete your profile with first name, last name, and photo\n• Verify your email address\n• Verify your phone number\n• Provide additional identity verification",
+  "verifySellerButton": "Start Verification",
+  "sellerVerificationPending": "Seller verification is pending review",
+  "sellerVerificationComplete": "You are a verified seller",
+  
+  "validationRequired": "This field is required",
+  "validationUsernameLength": "Username must be at least 3 characters long",
+  "validationUsernameInvalid": "Username can only contain letters, numbers, and underscores",
+  "validationPhoneInvalid": "Please enter a valid phone number"
+}
