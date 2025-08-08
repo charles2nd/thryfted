@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:clerk_flutter/clerk_flutter.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import '../../../l10n/app_localizations.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 import '../../../shared/theme/app_theme.dart';

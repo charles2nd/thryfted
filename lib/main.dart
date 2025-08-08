@@ -13,7 +13,7 @@ import 'core/auth/migration_service.dart';
 import 'core/config/clerk_config.dart';
 import 'core/providers/language_provider.dart';
 import 'shared/theme/app_theme.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'l10n/app_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

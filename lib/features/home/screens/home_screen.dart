@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import '../../../l10n/app_localizations.dart';
 import 'package:clerk_flutter/clerk_flutter.dart';
 import '../../../shared/theme/app_theme.dart';
 import '../../../core/models/clerk_user.dart';
