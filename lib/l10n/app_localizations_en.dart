@@ -839,4 +839,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get validationPhoneInvalid => 'Please enter a valid phone number';
+
+  @override
+  String get sendOffer => 'Send Offer';
 }

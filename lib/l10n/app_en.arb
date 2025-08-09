@@ -413,5 +413,7 @@
   "validationRequired": "This field is required",
   "validationUsernameLength": "Username must be at least 3 characters long",
   "validationUsernameInvalid": "Username can only contain letters, numbers, and underscores",
-  "validationPhoneInvalid": "Please enter a valid phone number"
+  "validationPhoneInvalid": "Please enter a valid phone number",
+  
+  "sendOffer": "Send Offer"
 }

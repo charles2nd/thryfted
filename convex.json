@@ -1,0 +1,10 @@
+{
+  "authConfig": {
+    "providers": [
+      {
+        "domain": "https://obliging-raptor-71.clerk.accounts.dev",
+        "applicationID": "convex"
+      }
+    ]
+  }
+}

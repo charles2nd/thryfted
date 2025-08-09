@@ -286,5 +286,7 @@
   "validationRequired": "Ce champ est obligatoire",
   "validationUsernameLength": "Le nom d'utilisateur doit contenir au moins 3 caractères",
   "validationUsernameInvalid": "Le nom d'utilisateur ne peut contenir que des lettres, chiffres et underscores",
-  "validationPhoneInvalid": "Veuillez saisir un numéro de téléphone valide"
+  "validationPhoneInvalid": "Veuillez saisir un numéro de téléphone valide",
+  
+  "sendOffer": "Envoyer une offre"
 }

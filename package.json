@@ -1,5 +1,13 @@
 {
+  "name": "thryfted-chat-backend",
+  "version": "1.0.0",
+  "description": "Convex backend for Thryfted chat functionality",
   "dependencies": {
-    "@clerk/nextjs": "^6.29.0"
+    "@clerk/nextjs": "^6.29.0",
+    "convex": "^1.18.0"
+  },
+  "scripts": {
+    "dev": "convex dev",
+    "deploy": "convex deploy"
   }
 }

@@ -849,4 +849,7 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get validationPhoneInvalid =>
       'Veuillez saisir un numéro de téléphone valide';
+
+  @override
+  String get sendOffer => 'Envoyer une offre';
 }
